@@ -1,0 +1,868 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #0ea5a4;
+  --accent: #ff8c1a;
+  --bg: #f8fafc;
+  --dark: #0f172a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 70px;
+  background: white;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  margin: 0 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.hero {
+  padding: 100px 70px;
+  background: linear-gradient(to right,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.2)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  color: white;
+}
+
+.hero span {
+  color: var(--accent);
+}
+
+.badge {
+  background: white;
+  color: var(--dark);
+  padding: 8px 18px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: 52px;
+}
+
+.hero p {
+  margin: 20px 0 35px;
+  opacity: 0.9;
+}
+
+
+.search-box {
+  display: flex;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  gap: 10px;
+  max-width: 800px;
+}
+
+.search-box input,
+.search-box select {
+  padding: 12px;
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.search-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px;
+}
+
+.stats h2 {
+  font-size: 32px;
+  color: var(--primary);
+}
+
+/* ===== DESTINATIONS DARK BACKGROUND ===== */
+.destinations-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #020617, #020617, #000);
+  padding: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* ===== DESTINATION CARD ===== */
+.destination-card {
+  position: relative;
+  height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: 0.5s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-14px) scale(1.05);
+}
+
+/* IMAGE */
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.8s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.2);
+}
+
+/* OVERLAY */
+.destination-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.3),
+    transparent
+  );
+}
+
+/* TEXT */
+.destination-info {
+  position: absolute;
+  bottom: 0;
+  padding: 22px;
+  z-index: 2;
+  color: white;
+}
+
+.destination-info button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 999px;
+  border: none;
+}
+
+/* COMMON */
+.section-title {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.section-title h1 {
+  font-size: 40px;
+}
+
+.section-title p {
+  opacity: 0.7;
+}
+
+/* DEALS */
+
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  padding: 60px;
+}
+
+.deal-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.deal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deal-card:hover {
+  transform: scale(1.05);
+}
+
+.deal-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+/* ABOUT */
+.about-hero {
+  padding: 120px;
+  text-align: center;
+  background: linear-gradient(135deg, #0ea5a4, #38bdf8);
+  color: white;
+}
+
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 80px;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+}
+
+/* CONTACT */
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.contact-card {
+  width: 420px;
+  padding: 35px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+/* BOOKING / PAYMENT / CONFIRM */
+.booking-wrapper,
+.payment-wrapper,
+.confirm-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.booking-card,
+.payment-card,
+.confirm-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 30px 60px rgba(13, 11, 11, 0.453);
+}
+
+.booking-card input,
+.booking-card select,
+.payment-card input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.confirm-card {
+  text-align: center;
+}
+/* ===== BOOKING BACKGROUND IMAGE ===== */
+.booking-bg {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      rgba(15, 23, 42, 0.65),
+      rgba(15, 23, 42, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center card */
+.booking-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Card shadow enhancement */
+.booking-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(1px);
+  padding: 40px;
+  border-radius: 22px;
+  width: 420px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.25),
+    0 10px 20px rgba(0,0,0,0.15);
+  animation: floatIn 0.8s ease;
+}
+
+/* Subtle entrance animation */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== VIBRANT ANIMATED PAYMENT BACKGROUND ===== */
+.payment-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #0ea5a4,
+    #38bdf8,
+    #8b5cf6,
+    #ec4899
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* PAYMENT CARD GLASS EFFECT */
+.payment-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  width: 420px;
+  border-radius: 22px;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 15px 30px rgba(0, 0, 0, 0.15);
+  animation: scaleIn 0.7s ease;
+}
+
+/* Card entrance animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.payment-card .primary-btn {
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.payment-card .primary-btn:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.7);
+  transform: translateY(-2px);
+}
+/* ===== CONFIRMATION BACKGROUND SLIDESHOW ===== */
+.confirm-bg {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  animation: bgSlide 24s infinite;
+}
+
+/* Overlay for readability */
+.confirm-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(15, 23, 42, 0.75),
+    rgba(15, 23, 42, 0.75)
+  );
+  z-index: 1;
+}
+
+/* Card centering */
+.confirm-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Celebration Card */
+.confirm-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 45px;
+  width: 420px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.35),
+    0 10px 25px rgba(0,0,0,0.2);
+  animation: popIn 0.8s ease;
+}
+
+/* Entry animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Background slideshow animation */
+@keyframes bgSlide {
+  0% {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  }
+  33% {
+    background-image: url("https://images.unsplash.com/photo-1502602898657-3e91760cbb34");
+  }
+  66% {
+    background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+  }
+  100% {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  }
+}
+.confirm-card .primary-btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.confirm-card .primary-btn:hover {
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.7);
+  transform: translateY(-2px);
+}
+/* ================= FILTER BUTTONS ================= */
+.deal-filters {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.deal-filters button {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(14, 165, 164, 0.12);
+  color: #0f172a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(8px);
+}
+
+.deal-filters button:hover {
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(14, 165, 164, 0.35);
+}
+
+/* ================= DEAL GRID ================= */
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  padding: 60px 80px;
+}
+
+/* ================= DEAL CARD ================= */
+.deal-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-14px) scale(1.04);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.25),
+    0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= DEAL IMAGE ================= */
+.deal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.deal-card:hover img {
+  transform: scale(1.18);
+}
+
+/* ================= IMAGE OVERLAY ================= */
+.deal-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.85),
+    rgba(15, 23, 42, 0.25),
+    transparent
+  );
+}
+
+/* ================= DEAL INFO ================= */
+.deal-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 22px;
+  z-index: 2;
+  color: white;
+}
+
+.deal-info h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.deal-info p {
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* ================= BOOK DEAL BUTTON ================= */
+.deal-info button {
+  margin-top: 14px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.deal-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.7);
+}
+
+/* ================= BADGES ================= */
+.deal-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ef4444, #fb7185);
+  color: white;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.6);
+}
+
+.deal-badge.limited {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
+}
+
+/* ================= TIMER ================= */
+.timer {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* ================= COUPON SECTION ================= */
+.coupon-box {
+  margin: 80px auto;
+  padding: 50px;
+  width: fit-content;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  box-shadow: 0 30px 70px rgba(14, 165, 164, 0.45);
+  text-align: center;
+  color: white;
+}
+
+.coupon-box input {
+  padding: 14px 16px;
+  width: 240px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
+
+.coupon-box button {
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: none;
+  background: white;
+  color: #0ea5a4;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.coupon-box button:hover {
+  transform: scale(1.1);
+}
+
+#couponMsg {
+  margin-top: 15px;
+  font-weight: 600;
+}
+/* ================= FOOTER ================= */
+.site-footer {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+  padding: 70px 80px 30px;
+  margin-top: 100px;
+}
+
+/* MAIN GRID */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+}
+
+/* BRAND */
+.footer-logo {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin: 6px 0;
+  opacity: 0.9;
+}
+
+/* LINKS */
+.footer-links h4 {
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: #22d3ee;
+}
+
+.footer-links a {
+  display: block;
+  color: #cbd5f5;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #22d3ee;
+  transform: translateX(6px);
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* SOCIAL ICONS */
+.footer-socials span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-socials span:hover {
+  background: #22d3ee;
+  color: #020617;
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* ===== BOOKING PAGE NAV FIX (LOCAL ONLY) ===== */
+body:has(.booking-wrapper) header button,
+body:has(.booking-wrapper) header a {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
+  cursor: pointer;
+  position: relative;
+}
+
+/* underline animation */
+body:has(.booking-wrapper) header button::after,
+body:has(.booking-wrapper) header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #0ea5a4;
+  transition: width 0.3s ease;
+}
+
+body:has(.booking-wrapper) header button:hover::after,
+body:has(.booking-wrapper) header a:hover::after {
+  width: 100%;
+}
+

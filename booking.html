@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Trip | ExploreGlobe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">✈ ExploreGlobe</div>
+  <button onclick="goPage('index.html')">Home</button>
+  <button onclick="goPage('contact.html')">Contact</button>
+    <button onclick="goPage('deals.html')">Deals</button>
+    <button onclick="goPage('destination.html')">Destination</button>
+</header>
+
+<section class="booking-bg">
+  <div class="booking-wrapper">
+
+  <div class="booking-card">
+    <h2>Book Your Trip</h2>
+
+    <select id="destination">
+      <option value="12000">Paris</option>
+      <option value="18000">Maldives</option>
+      <option value="15000">Santorini</option>
+      <option value="10000">Swiss Alps</option>
+    </select>
+
+    <input type="date" id="date">
+
+    <input type="number" id="guests" placeholder="Guests" min="1" value="1">
+
+    <button class="primary-btn" onclick="calculatePrice()">Calculate Price</button>
+
+    <h3 id="totalPrice"></h3>
+
+    <button class="primary-btn" onclick="goPayment()">Proceed to Payment</button>
+  </div>
+  </div>
+</section>
+
+<script src="script.js">
+    if (localStorage.getItem("dealPrice")) {
+  document.getElementById("destination").value =
+    localStorage.getItem("dealPrice");
+}
+
+</script>
+</body>
+</html>

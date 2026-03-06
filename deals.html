@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Deals | Wanderlust</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="navbar">
+     <nav class="nav-links">
+    <button onclick="goPage('index.html')">Home</button>
+    <button onclick="goPage('contact.html')">Contact</button>
+    <button onclick="goPage('about.html')">About</button>
+    <button onclick="goPage('destination.html')">Destination</button>
+     </nav>
+</header>
+
+</div>  
+
+<section class="section-title">
+  <h1>🔥 Hot Travel Deals</h1>
+  <p>Limited-time offers you don’t want to miss</p>
+</section>
+
+<div class="deal-filters">
+  <button onclick="filterDeals('all')">All</button>
+  <button onclick="filterDeals('beach')">🏖 Beach</button>
+  <button onclick="filterDeals('city')">🏙 City</button>
+  <button onclick="filterDeals('adventure')">🏔 Adventure</button>
+</div>
+
+<!-- DEALS GRID -->
+<section class="deal-grid">
+
+  <div class="deal-card beach">
+    <span class="deal-badge">HOT DEAL</span>
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    <div class="deal-info">
+      <h3>Maldives Escape</h3>
+      <p>₹18,000 / person</p>
+      <p class="timer" data-time="3600"></p>
+      <button onclick="bookDeal('Maldives',18000)">Book Deal</button>
+    </div>
+  </div>
+
+  <div class="deal-card city">
+    <span class="deal-badge limited">LIMITED</span>
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+    <div class="deal-info">
+      <h3>Paris Getaway</h3>
+      <p>₹12,000 / person</p>
+      <p class="timer" data-time="5400"></p>
+      <button onclick="bookDeal('Paris',12000)">Book Deal</button>
+    </div>
+  </div>
+
+  <div class="deal-card adventure">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    <div class="deal-info">
+      <h3>Swiss Alps</h3>
+      <p>₹15,000 / person</p>
+      <p class="timer" data-time="7200"></p>
+      <button onclick="bookDeal('Swiss Alps',15000)">Book Deal</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- COUPON -->
+<section class="coupon-box">
+  <input id="coupon" placeholder="Enter Coupon Code">
+  <button onclick="applyCoupon()">Apply</button>
+  <p id="couponMsg"></p>
+</section>
+<script src="script.js"></script>
+
+</body>
